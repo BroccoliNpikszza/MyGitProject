@@ -35,6 +35,22 @@ public class  LinkListClass{
       }
     }
   }
+  public void traverse(Node node){
+    Node current = node;
+    if(current!=null){
+      System.out.print(current.data);
+      System.out.print(" -> ");
+      while((current=current.next)!=null){
+        System.out.print(current.data);
+        System.out.print(" -> ");
+      }
+      System.out.print("null");
+      System.out.println("");
+    }
+    else{
+      System.out.println("Linked list is empty.");
+    }
+  }
 }
 class Node{
   int data;
