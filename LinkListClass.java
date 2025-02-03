@@ -22,6 +22,19 @@ public class  LinkListClass{
         current.next = newNode;
       }
     }
+     public void remove(int pos){
+    Node current = this.head;
+    if(current!=null){
+      if (pos == 0){
+        this.head = this.head.next;
+      }else{
+        for(int i = 0; i < pos-1; i++){
+          current = current.next;
+        }
+        current.next = current.next.next;
+      }
+    }
+  }
 }
 class Node{
   int data;
