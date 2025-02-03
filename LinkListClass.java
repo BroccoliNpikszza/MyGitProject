@@ -3,6 +3,7 @@ public class  LinkListClass{
   public LinkListClass(){
     this.head = null;
   }
+
   public void add(int data, int pos){
     Node newNode = new Node(data);
     if(pos==0){
@@ -22,7 +23,9 @@ public class  LinkListClass{
         current.next = newNode;
       }
     }
-     public void remove(int pos){
+  }
+
+  public void remove(int pos){
     Node current = this.head;
     if(current!=null){
       if (pos == 0){
@@ -35,6 +38,7 @@ public class  LinkListClass{
       }
     }
   }
+
   public void traverse(Node node){
     Node current = node;
     if(current!=null){
@@ -51,7 +55,34 @@ public class  LinkListClass{
       System.out.println("Linked list is empty.");
     }
   }
+
+  public Node getNode(int pos){
+    Node current = this.head;
+    if(pos==0){
+      return current;
+    }else{
+      if(current!=null){
+        int i = 0;
+        for(; i < pos; i++){
+          if(current.next!=null){
+            current = current.next;
+          }else{
+            System.out.println("Index out of range.");
+          }
+        }
+        if(i == pos){
+          return current;
+        }else{
+          System.out.println("Index out of range");
+          return null;
+        }
+      }else{
+        return null;
+      }
+    }
+  }
 }
+
 class Node{
   int data;
   Node next;
